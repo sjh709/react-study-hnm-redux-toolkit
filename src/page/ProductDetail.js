@@ -1,7 +1,53 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Container, Row, Col, Button, Dropdown } from 'react-bootstrap';
+import { useParams, useSearchParams } from 'react-router-dom';
 
 const ProductDetail = () => {
-  return <div>상품 상세 페이지</div>;
+  const { id } = useParams();
+  const [productDetail, setProductDetail] = useState(null);
+
+  const getProductDetail = async () => {
+    let url = `http://localhost:4000/products/${id}`;
+    let response = await fetch(url);
+    let data = await response.json();
+    setProductDetail(data);
+  };
+
+  useEffect(() => {
+    getProductDetail();
+  }, []);
+
+  return (
+    <div className='detail-area'>
+      <Container>
+        <Row>
+          <Col lg={6}>
+            <img width={636} src={productDetail?.img} />
+          </Col>
+          <Col lg={6}>
+            <div className='product-info'>{productDetail?.title}</div>
+            <div className='product-info'>₩ {productDetail?.price}</div>
+            <div className='product-choice'>
+              {productDetail?.choice === true ? 'Conscious choice' : ''}
+            </div>
+            <Dropdown className='product-size'>
+              <Dropdown.Toggle variant='outline-dark' id='dropdown-basic'>
+                사이즈 선택
+              </Dropdown.Toggle>
+              <Dropdown.Menu>
+                <Dropdown.Item href='#/action-1'>S</Dropdown.Item>
+                <Dropdown.Item href='#/action-2'>M</Dropdown.Item>
+                <Dropdown.Item href='#/action-3'>L</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+            <Button className='add-button' variant='dark'>
+              추가
+            </Button>
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  );
 };
 
 export default ProductDetail;

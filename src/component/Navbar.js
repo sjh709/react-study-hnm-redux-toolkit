@@ -2,9 +2,9 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ authenticate, setAuthenticate }) => {
   const navigate = useNavigate();
 
   const menuList = [
@@ -19,7 +19,11 @@ const Navbar = () => {
   ];
 
   const moveLoginPage = () => {
-    navigate('/login');
+    if (authenticate) {
+      setAuthenticate(false);
+    } else {
+      navigate('/login');
+    }
   };
 
   return (
@@ -27,14 +31,16 @@ const Navbar = () => {
       <div>
         <div className='login-button' onClick={moveLoginPage}>
           <FontAwesomeIcon icon={faUser} className='icon' />
-          <div>로그인</div>
+          <div>{authenticate ? '로그아웃' : '로그인'}</div>
         </div>
       </div>
       <div className='nav-section'>
-        <img
-          width={100}
-          src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/2560px-H%26M-Logo.svg.png'
-        />
+        <Link to='/'>
+          <img
+            width={100}
+            src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/2560px-H%26M-Logo.svg.png'
+          />
+        </Link>
       </div>
       <div className='menu-area'>
         <ul className='menu-list'>

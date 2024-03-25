@@ -66,6 +66,10 @@
   margin: 1rem 0;
 }
 
+.product-card {
+  cursor: pointer;
+}
+
 .product-card:hover {
   transform: scale(1.1);
   z-index: 1;
@@ -91,4 +95,21 @@
 .login-form {
   width: 40em;
   margin-top: 1.5rem;
+}
+
+.detail-area {
+  margin: 3rem 0;
+}
+
+.product-info {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.product-size {
+  margin: 1rem 0;
+}
+
+.add-button {
+  width: 100%;
 }
