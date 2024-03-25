@@ -2,8 +2,11 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   const menuList = [
     'Women',
     'Men',
@@ -14,10 +17,15 @@ const Navbar = () => {
     'Sale',
     '지속가능성',
   ];
+
+  const moveLoginPage = () => {
+    navigate('/login');
+  };
+
   return (
     <div>
       <div>
-        <div class='login-button'>
+        <div className='login-button' onClick={moveLoginPage}>
           <FontAwesomeIcon icon={faUser} className='icon' />
           <div>로그인</div>
         </div>
@@ -30,8 +38,8 @@ const Navbar = () => {
       </div>
       <div className='menu-area'>
         <ul className='menu-list'>
-          {menuList.map((menu) => (
-            <li>{menu}</li>
+          {menuList.map((menu, index) => (
+            <li key={index}>{menu}</li>
           ))}
         </ul>
         <div className='search-box'>

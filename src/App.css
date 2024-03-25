@@ -5,6 +5,7 @@
   margin: 10px 40px;
   height: 50px;
   gap: 8px;
+  cursor: pointer;
 }
 
 .login-button .icon {
@@ -14,6 +15,7 @@
 .nav-section {
   display: flex;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .menu-list {
@@ -54,4 +56,39 @@
   border: none;
   font-size: 25px;
   cursor: pointer;
+}
+
+.product-area {
+  margin: 3rem 0;
+}
+
+.product-col {
+  margin: 1rem 0;
+}
+
+.product-card:hover {
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+.product-img {
+  width: 306px;
+  margin-bottom: 0.6rem;
+}
+
+.product-choice {
+  font-size: 11px;
+  color: #63786a;
+  font-weight: 700;
+  height: 16px;
+}
+
+.new-product {
+  font-size: 11px;
+  height: 16px;
+}
+
+.login-form {
+  width: 40em;
+  margin-top: 1.5rem;
 }
