@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
@@ -6,6 +6,7 @@ import { useNavigate, Link } from 'react-router-dom';
 
 const Navbar = ({ authenticate, setAuthenticate }) => {
   const navigate = useNavigate();
+  const [keyword, setKeyword] = useState('');
 
   const menuList = [
     'Women',
@@ -24,6 +25,18 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
     } else {
       navigate('/login');
     }
+  };
+
+  const searchKey = (event) => {
+    if (event.key === 'Enter') {
+      navigate(`/?q=${keyword}`);
+      setKeyword('');
+    }
+  };
+
+  const searchBtn = () => {
+    navigate(`/?q=${keyword}`);
+    setKeyword('');
   };
 
   return (
@@ -49,10 +62,16 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
           ))}
         </ul>
         <div className='search-box'>
-          <button>
+          <button onClick={searchBtn}>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </button>
-          <input type='text' placeholder='제품검색' />
+          <input
+            type='text'
+            placeholder='제품검색'
+            onChange={(event) => setKeyword(event.target.value)}
+            onKeyPress={(event) => searchKey(event)}
+            value={keyword}
+          />
         </div>
       </div>
     </div>
