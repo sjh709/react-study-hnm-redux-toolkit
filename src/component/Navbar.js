@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import {
+  faMagnifyingGlass,
+  faBars,
+  faXmark,
+} from '@fortawesome/free-solid-svg-icons';
 import { useNavigate, Link } from 'react-router-dom';
 
 const Navbar = ({ authenticate, setAuthenticate }) => {
   const navigate = useNavigate();
   const [keyword, setKeyword] = useState('');
+  const [sideMenu, setSideMenu] = useState(false);
 
   const menuList = [
     'Women',
@@ -41,7 +46,20 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
 
   return (
     <div>
-      <div>
+      <div className={`side-menu ${sideMenu === true ? 'open' : ''}`}>
+        <button className='close-btn' onClick={() => setSideMenu(false)}>
+          <FontAwesomeIcon icon={faXmark} />
+        </button>
+        <div className='side-menu-list'>
+          {menuList.map((menu, index) => (
+            <button key={index}>{menu}</button>
+          ))}
+        </div>
+      </div>
+      <div className='nav-header'>
+        <div className='burger-menu hide' onClick={() => setSideMenu(true)}>
+          <FontAwesomeIcon icon={faBars} />
+        </div>
         <div className='login-button' onClick={moveLoginPage}>
           <FontAwesomeIcon icon={faUser} className='icon' />
           <div>{authenticate ? '로그아웃' : '로그인'}</div>
