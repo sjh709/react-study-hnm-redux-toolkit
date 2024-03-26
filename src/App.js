@@ -3,16 +3,12 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import ProductAll from './page/ProductAll';
 import Login from './page/Login';
-import ProductDetail from './page/ProductDetail';
 import Navbar from './component/Navbar';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import PrivateRoute from './route/PrivateRoute';
 
 function App() {
   const [authenticate, setAuthenticate] = useState(false); // true: 로그인 O, false: 로그인 X
-  useEffect(() => {
-    // console.log('authenticate', authenticate);
-  }, [authenticate]);
   return (
     <div>
       <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate} />

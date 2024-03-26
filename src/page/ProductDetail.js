@@ -22,7 +22,7 @@ const ProductDetail = () => {
       <Container>
         <Row>
           <Col lg={6}>
-            <img width={636} src={productDetail?.img} />
+            <img width={636} src={productDetail?.img} alt='product image' />
           </Col>
           <Col lg={6}>
             <div className='product-info'>{productDetail?.title}</div>

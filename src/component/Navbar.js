@@ -69,6 +69,7 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
         <Link to='/'>
           <img
             width={100}
+            alt='logo'
             src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/2560px-H%26M-Logo.svg.png'
           />
         </Link>
@@ -76,7 +77,9 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
       <div className='menu-area'>
         <ul className='menu-list'>
           {menuList.map((menu, index) => (
-            <li key={index}>{menu}</li>
+            <li key={index}>
+              <a href='#'>{menu}</a>
+            </li>
           ))}
         </ul>
         <div className='search-box'>
