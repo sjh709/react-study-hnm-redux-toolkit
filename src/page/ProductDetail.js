@@ -21,10 +21,14 @@ const ProductDetail = () => {
     <div className='detail-area'>
       <Container>
         <Row>
-          <Col lg={6}>
-            <img width={636} src={productDetail?.img} alt='product image' />
+          <Col md={6} sm={12}>
+            <img
+              className='detail-image'
+              src={productDetail?.img}
+              alt='product image'
+            />
           </Col>
-          <Col lg={6}>
+          <Col md={6} sm={12}>
             <div className='product-info'>{productDetail?.title}</div>
             <div className='product-info'>₩ {productDetail?.price}</div>
             <div className='product-choice'>

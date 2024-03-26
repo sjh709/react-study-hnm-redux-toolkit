@@ -108,7 +108,7 @@ a {
 
 .product-info {
   font-size: 20px;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
 .product-size {
@@ -137,6 +137,10 @@ a {
 
 .side-menu {
   display: none;
+}
+
+.detail-image {
+  width: 100%;
 }
 
 @media screen and (max-width: 63rem) {
