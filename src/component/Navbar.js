@@ -7,11 +7,15 @@ import {
   faXmark,
 } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate, Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { authenticateAction } from '../redux/actions/authenticateAction';
 
-const Navbar = ({ authenticate, setAuthenticate }) => {
+const Navbar = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [keyword, setKeyword] = useState('');
   const [sideMenu, setSideMenu] = useState(false);
+  const authenticate = useSelector((state) => state.auth.authenticate);
 
   const menuList = [
     'Women',
@@ -26,7 +30,7 @@ const Navbar = ({ authenticate, setAuthenticate }) => {
 
   const moveLoginPage = () => {
     if (authenticate) {
-      setAuthenticate(false);
+      dispatch(authenticateAction.logout());
     } else {
       navigate('/login');
     }
