@@ -1,6 +1,6 @@
 # 👖 h&m 쇼핑몰 사이트 (hnm-redux-thunk)
 
-<img width="1532" alt="image" src="">
+<img width="1532" alt="image" src="https://github.com/sjh709/react-study-hnm/assets/42454759/d41be939-b8ee-4766-a027-3120ed8592a9">
 
 - 배포 URL :
 
@@ -28,7 +28,33 @@
 ## 3. 프로젝트 구조
 
 ```
-
+📦src
+ ┣ 📂component
+ ┃ ┣ 📜Navbar.js
+ ┃ ┗ 📜ProductCard.js
+ ┣ 📂page
+ ┃ ┣ 📜Login.js
+ ┃ ┣ 📜ProductAll.js
+ ┃ ┗ 📜ProductDetail.js
+ ┣ 📂redux
+ ┃ ┣ 📂actions
+ ┃ ┃ ┣ 📜authenticateAction.js
+ ┃ ┃ ┗ 📜productAction.js
+ ┃ ┣ 📂reducers
+ ┃ ┃ ┣ 📜authenticateReducer.js
+ ┃ ┃ ┣ 📜index.js
+ ┃ ┃ ┗ 📜productReducer.js
+ ┃ ┗ 📜store.js
+ ┣ 📂route
+ ┃ ┗ 📜PrivateRoute.js
+ ┣ 📜App.css
+ ┣ 📜App.js
+ ┣ 📜App.test.js
+ ┣ 📜index.css
+ ┣ 📜index.js
+ ┣ 📜logo.svg
+ ┣ 📜reportWebVitals.js
+ ┗ 📜setupTests.js
 ```
 
 <br>
