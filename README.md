@@ -1,4 +1,4 @@
-# 👖 h&m 쇼핑몰 사이트 (hnm-redux-thunk)
+# 👖 h&m 쇼핑몰 사이트 (hnm-redux-toolkit)
 
 <img width="1532" alt="image" src="https://github.com/sjh709/react-study-hnm/assets/42454759/d41be939-b8ee-4766-a027-3120ed8592a9">
 
