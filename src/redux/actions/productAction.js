@@ -1,14 +1,4 @@
-import { productActions } from '../reducers/productReducer';
-
-function getProducts(searchQuery) {
-  return async (dispatch, getState) => {
-    // let url = `https://my-json-server.typicode.com/sjh709/react-study-hnm-redux-toolkit/products?q=${searchQuery}`;
-    let url = `http://localhost:4000/products?q=${searchQuery}`;
-    let response = await fetch(url);
-    let data = await response.json();
-    dispatch(productActions.getAllProducts({ data }));
-  };
-}
+import { productActions } from '../reducers/productSlice';
 
 function getProductDetail(id) {
   return async (dispatch) => {
@@ -20,4 +10,4 @@ function getProductDetail(id) {
   };
 }
 
-export const productAction = { getProducts, getProductDetail };
+export const productAction = { getProductDetail };
