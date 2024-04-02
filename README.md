@@ -38,12 +38,10 @@
  ┃ ┗ 📜ProductDetail.js
  ┣ 📂redux
  ┃ ┣ 📂actions
- ┃ ┃ ┣ 📜authenticateAction.js
- ┃ ┃ ┗ 📜productAction.js
+ ┃ ┃ ┗ 📜authenticateAction.js
  ┃ ┣ 📂reducers
  ┃ ┃ ┣ 📜authenticateReducer.js
- ┃ ┃ ┣ 📜index.js
- ┃ ┃ ┗ 📜productReducer.js
+ ┃ ┃ ┗ 📜productSlice.js
  ┃ ┗ 📜store.js
  ┣ 📂route
  ┃ ┗ 📜PrivateRoute.js
