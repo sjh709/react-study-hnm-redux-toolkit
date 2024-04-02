@@ -2,7 +2,7 @@
 
 <img width="1532" alt="image" src="https://github.com/sjh709/react-study-hnm/assets/42454759/d41be939-b8ee-4766-a027-3120ed8592a9">
 
-- 배포 URL :
+- 배포 URL : https://s2-hnm-redux-toolkit.netlify.app/
 
 <br>
 
