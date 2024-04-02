@@ -54,10 +54,24 @@ const Navbar = () => {
         <button className='close-btn' onClick={() => setSideMenu(false)}>
           <FontAwesomeIcon icon={faXmark} />
         </button>
-        <div className='side-menu-list'>
-          {menuList.map((menu, index) => (
-            <button key={index}>{menu}</button>
-          ))}
+        <div>
+          <div className='side-menu-list'>
+            {menuList.map((menu, index) => (
+              <button key={index}>{menu}</button>
+            ))}
+          </div>
+          <div className='side-search-box'>
+            <button onClick={searchBtn}>
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
+            </button>
+            <input
+              type='text'
+              placeholder='제품검색'
+              onChange={(event) => setKeyword(event.target.value)}
+              onKeyPress={(event) => searchKey(event)}
+              value={keyword}
+            />
+          </div>
         </div>
       </div>
       <div className='nav-header'>
